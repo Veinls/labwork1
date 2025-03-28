@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: labwork1
+Version: 0.1.0
+Summary: python labwork
+Author-email: lisau <elisaveta_ulan@mail.ru>
+License: MIT
+Project-URL: Homepage, https://github.com/Veinls/labwork1
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown

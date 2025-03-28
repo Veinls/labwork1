@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "labwork1"
+version = "0.1.0"
+authors = [{name = "lisau", email = "elisaveta_ulan@mail.ru"}]
+description = "python labwork"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+
+[project.urls]
+Homepage = "https://github.com/Veinls/labwork1"

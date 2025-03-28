@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/task1.py
+src/task2.py
+src/task3.py
+src/labwork1.egg-info/PKG-INFO
+src/labwork1.egg-info/SOURCES.txt
+src/labwork1.egg-info/dependency_links.txt
+src/labwork1.egg-info/top_level.txt
+tests/tests_task1.py
