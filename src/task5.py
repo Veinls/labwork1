@@ -1,4 +1,5 @@
 import asyncio
+import time
 
 async def function1():
     print("Function 1 - Start")
@@ -15,5 +16,3 @@ async def function2():
     print("Function 2 - Middle 2")
     await asyncio.sleep(1)
     print("Function 2 - End")
-
-

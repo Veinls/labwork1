@@ -13,3 +13,6 @@ license = {text = "MIT"}
 
 [project.urls]
 Homepage = "https://github.com/Veinls/labwork1"
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"

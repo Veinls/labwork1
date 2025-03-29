@@ -14,9 +14,7 @@ def test_method_calls_within_limit():
 
     obj = TestClass()
 
-    # Первые два вызова должны работать
     assert obj.method1() == "method1 called"
     assert obj.method1() == "method1 called"
 
-    # Другой метод тоже должен работать
     assert obj.method2() == "method2 called"

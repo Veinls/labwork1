@@ -7,7 +7,7 @@ from src.task2 import retry
 def failing_func(error_type, msg="Error"):
     raise error_type(msg)
 
-def test_success(): #успешное выполнение с первого раза
+def test_success(): # успешное выполнение с первого раза
     counter = 0
 
     @retry(3, 0.1)
@@ -21,7 +21,7 @@ def test_success(): #успешное выполнение с первого р�
     assert counter == 1
 
 
-def test_failure_output_messages(): #вывод при неудачных попытках
+def test_failure_output_messages(): # вывод при неудачных попытках
     captured_output = io.StringIO()
     original_stdout = sys.stdout
 
@@ -44,7 +44,7 @@ def test_failure_output_messages(): #вывод при неудачных поп
         sys.stdout = original_stdout
 
 
-def test_skips_other_exceptions(): #на исключения вне списка
+def test_skips_other_exceptions(): # на исключения вне списка
 
     @retry(3, 0.1,[ZeroDivisionError])
     def test_func():
@@ -54,7 +54,7 @@ def test_skips_other_exceptions(): #на исключения вне списк�
         test_func()
 
 
-def test_retry_until_success(capsys): #успешное выполнение после повторов
+def test_retry_until_success(capsys): # успешное выполнение после повторов
     counter = 0
 
     @retry(3,0.1, [ValueError])
