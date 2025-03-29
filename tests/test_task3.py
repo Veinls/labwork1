@@ -1,17 +1,26 @@
 import pytest
 import io
 import sys
-from src.task3 import logger
+import time
+import task3
 
 class Test:
-    @logger
+    @task3.logger
     def normal_method(self, x):
-        return x + 4
+        return x
 
-    def __magic_method(self):
-        return "magic off"
-    __magic_method = logger(__magic_method, show_magic_methods=False)
+    def __magic_method__(self, x):
+        return x
 
-    def __magic_method__(self):
-        return "magic on"
-    __magic_method__ = logger(__magic_method__, show_magic_methods=True)
+
+# def test():
+    # captured_output = io.StringIO()
+    # sys.stdout = captured_output
+    #
+    # start_time = time.time()
+    # result = Test()
+    # result.normal_method(1)
+    # result.__magic_method__(1)
+    # end_time = time.time()
+    #
+    # output = captured_output.getvalue()

@@ -8,11 +8,13 @@ def logger(func, show_magic_methods=True):
         if not(show_magic_methods) and is_magic_method(func.__name__):
             return None
 
+        start_time = time.time()
         result = func(*args, **kwargs)
+        end_time = time.time()
         print(f'class name: {self.__name__}')
         print(f'method name: {func.__name__}')
+        print(f'time: {end_time - start_time}')
         print(result)
 
         return result
     return wrapper
-
