@@ -19,12 +19,3 @@ def retry(attempts, delay, exceptions=None):
         return wrapper
     return decorator
 
-@retry(attempts=3, delay=1, exceptions=[ZeroDivisionError])
-def always_fail():
-    return 1 / 0  # Всегда вызывает ZeroDivisionError
-
-# Вызов функции
-try:
-    always_fail()
-except ZeroDivisionError as e:
-    print(f"Финальный результат: {e}")

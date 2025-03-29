@@ -1,20 +1,30 @@
 import pytest
 import io
 import sys
-import task1
+import time
+from src.task1 import logger
 
-@task1.logger
-def test_function():
-    return
+
+@logger
+def sample_func(a, b):
+    time.sleep(0.01)
+    return a + b
+
 
 def test():
-    captured_output = io.StringID()
-    sys.stdout = captured_output
+    captured_output = io.StringIO()
+    original_stdout = sys.stdout
+    try:
+        sys.stdout = captured_output
 
-    test_function()
+        result = sample_func(3, 4)
 
-    output = sys.__stdout__.getvalue()
+        output = captured_output.getvalue()
 
-    assert output == ""
+        assert result == 7
+        assert "name function:sample_func" in output
+        assert "(3, 4)" in output
+        assert "7" in output
 
-
+    finally:
+        sys.stdout = original_stdout
